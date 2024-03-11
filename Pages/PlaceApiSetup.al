@@ -1,0 +1,91 @@
+/// <summary>
+/// Page PlaceApiSetup (ID 50100).
+/// </summary>
+page 50100 "PlaceApiSetup"
+{
+    Caption = 'Place Api Setup';
+    PageType = Card;
+    ApplicationArea = All;
+    UsageCategory = Administration;
+    SourceTable = PlaceAPISetup;
+
+    layout
+    {
+        area(Content)
+        {
+            group(Setup)
+            {
+                field(APiKey; Rec.APiKey)
+                {
+                    ApplicationArea = All;
+                    trigger OnValidate()
+                    begin
+                        changeAPIKey();
+                    end;
+                }
+                field(LanguageCode; Rec.LanguageCode)
+                {
+                    ApplicationArea = All;
+                }
+                field("Test/Dev Settings"; EnableDevSettings)
+                {
+                    ApplicationArea = All;
+                    trigger OnValidate()
+                    begin
+                        if EnableDevSettings = true then begin
+                            DevSettingVisibility := true;
+                        end else
+                            if EnableDevSettings = false then begin
+                                DevSettingVisibility := false;
+                            end;
+                    end;
+                }
+
+            }
+            group("Test/Dev")
+            {
+                Visible = DevSettingVisibility;
+                field(TestLocation; Rec.TestLocation)
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Just For Develope Purposes';
+                    trigger OnValidate()
+                    var
+                        place: Codeunit Place;
+                    begin
+                        place.GetPredictions(Rec.TestLocation);
+                    end;
+                }
+            }
+        }
+    }
+    var
+        TempKey: Text[255];
+        DevSettingVisibility: Boolean;
+        EnableDevSettings: Boolean;
+
+    local procedure checkIfApiKeyIsEmpty()
+    begin
+        if Rec.FindLast() then;
+        TempKey := Rec.APiKey;
+        if Rec.APiKey = '' then begin
+            Message('API Key is empty');
+        end;
+    end;
+
+    local procedure changeAPIKey()
+    begin
+        if Dialog.Confirm('Change API Key?') then begin //yes
+            Message('API Key sucessfull changed');
+        end else begin //no
+            Rec.Delete();
+            Rec.APiKey := TempKey;
+            Rec.Insert();
+        end;
+    end;
+
+    trigger OnOpenPage()
+    begin
+        checkIfApiKeyIsEmpty();
+    end;
+}
