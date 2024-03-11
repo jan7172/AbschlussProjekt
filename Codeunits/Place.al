@@ -22,6 +22,7 @@ codeunit 50100 Place
             HttpClient.Get('https://maps.googleapis.com/maps/api/place/autocomplete/json?key=' + PlaceSetup.APiKey + '&language=' + PlaceSetup.LanguageCode + '&input=' + LocationInput, ResponseMessage);
         end else
             if TempUpdatedPostCode <> '' then begin
+                if SetPostCode.FindLast() then;
                 HttpClient.Get('https://maps.googleapis.com/maps/api/place/autocomplete/json?key=' + PlaceSetup.APiKey + '&language=' + PlaceSetup.LanguageCode + '&input=' + SetPostCode.TempLocation + '' + TempUpdatedPostCode, ResponseMessage);
             end;
         ResponseMessage.Content.ReadAs(ResponseJsonAsString);
