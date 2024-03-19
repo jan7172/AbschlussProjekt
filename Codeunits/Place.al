@@ -20,10 +20,11 @@ codeunit 50100 Place
         if SetPostCode.FindLast() then;
         if TempUpdatedPostCode = '' then begin
             HttpClient.Get('https://maps.googleapis.com/maps/api/place/autocomplete/json?key=' + PlaceSetup.APiKey + '&language=' + PlaceSetup.LanguageCode + '&input=' + LocationInput, ResponseMessage);
+            TempAddress := LocationInput;
         end else
             if TempUpdatedPostCode <> '' then begin
                 if SetPostCode.FindLast() then;
-                HttpClient.Get('https://maps.googleapis.com/maps/api/place/autocomplete/json?key=' + PlaceSetup.APiKey + '&language=' + PlaceSetup.LanguageCode + '&input=' + SetPostCode.TempLocation + '' + TempUpdatedPostCode, ResponseMessage);
+                HttpClient.Get('https://maps.googleapis.com/maps/api/place/autocomplete/json?key=' + PlaceSetup.APiKey + '&language=' + PlaceSetup.LanguageCode + '&input=' + TempAddress, ResponseMessage);
             end;
         ResponseMessage.Content.ReadAs(ResponseJsonAsString);
         JsonContent.ReadFrom(ResponseJsonAsString);
@@ -35,6 +36,7 @@ codeunit 50100 Place
             AddressPrediction.Description := Format(DescriptionArrayAsToken);
             JsonContentAsToken.AsObject().Get('place_id', PlaceIDAsToken);
             AddressPrediction.Place_ID := Format(PlaceIDAsToken);
+            AddressPrediction.TempLocation := LocationInput;
             AddressPrediction.Insert();
         end;
         if AddressPrediction.FindFirst() then;
@@ -105,11 +107,15 @@ codeunit 50100 Place
     /// Checks whether the user has updated the post code
     /// </summary>
     /// <param name="input">Boolean.</param>
-    procedure CheckForUpdatedPostCodeByUser(input: Text[20])
+    procedure CheckForUpdatedPostCodeByUser(input: Text[255])
+    var
+        Addressprediction: Record AddressPredictions;
+        SetPostCode: Record SetPostCode;
     begin
-        TempUpdatedPostCode := input;
-        GetPredictions(SetPostCode.TempLocation);
-        // Message(Format(TempUpdatedPostCode));
+        TempUpdatedPostCode := 'updated';
+        TempAddress := input;
+        GetPredictions(Addressprediction.TempLocation);
+        Message('Test');
     end;
 
     var
@@ -123,4 +129,5 @@ codeunit 50100 Place
         Google_Place_ID: Text[255];
         TempUpdatedPostCode: Text[20];
         SetPostCode: Record SetPostCode;
+        TempAddress: Text[255];
 }

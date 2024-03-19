@@ -40,6 +40,9 @@ page 50101 "AddressPrediction"
                 var
                     SetPostCode: Record SetPostCode;
                 begin
+                    SetPostCode.Init();
+                    SetPostCode.TempLocation := Rec.TempLocation;
+                    SetPostCode.Insert();
                     Page.RunModal(50103, SetPostCode);
                 end;
             }

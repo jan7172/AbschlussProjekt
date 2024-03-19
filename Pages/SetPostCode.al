@@ -17,12 +17,12 @@ page 50103 "SetPostCode"
                 field(TempPostCode; Rec.TempPostCode)
                 {
                     ApplicationArea = All;
-
                     trigger OnValidate()
                     var
                         Place: Codeunit Place;
+                        AddressPrediction: Record AddressPredictions;
                     begin
-                        Place.CheckForUpdatedPostCodeByUser(Rec.TempPostCode);
+                        Place.CheckForUpdatedPostCodeByUser(Rec.TempPostCode + ' ' + Rec.TempLocation);
                         Close();
                     end;
                 }

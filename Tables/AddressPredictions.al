@@ -12,6 +12,10 @@ table 50101 AddressPredictions
         {
             Caption = 'Description';
         }
+        field(3; TempLocation; Text[255])
+        {
+            Caption = 'Temp Location';
+        }
 
     }
 
