@@ -15,7 +15,7 @@ codeunit 50100 Place
         PlaceIDAsToken: JsonToken;
 
     begin
-        if placeSetup.FindLast() then;
+        if PlaceSetup.FindLast() then; //Geplante Erweiterung: Abfangen wenn kein Setup eingerichtet wurde...
         AddressPrediction.DeleteAll();
         if SetPostCode.FindLast() then;
         if TempUpdatedPostCode = '' then begin
@@ -112,7 +112,7 @@ codeunit 50100 Place
         Addressprediction: Record AddressPredictions;
         SetPostCode: Record SetPostCode;
     begin
-        // TempUpdatedPostCode := 'updated';
+        TempUpdatedPostCode := 'updated';
         TempAddress := input;
         GetPredictions(Addressprediction.TempLocation);
         Message('Test');

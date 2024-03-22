@@ -34,22 +34,13 @@ pageextension 50100 CustomerCardExt extends "Customer Card"
     }
 
     local procedure checkIfAddressIsValid()
-
-    var
-        Offset: Integer;
-        FormattedAddress: Text[100];
-
-
-        JsonContents: JsonObject;
-        PredictionArray: JsonArray;
     begin
-        if PlaceAPISetup.FindLast() then;
-        Offset := Text.StrLen(Rec.Address);
+        if PlaceAPISetup.FindLast() then; //Geplante Erweiterung: Abfangen wenn kein Setup eingerichtet wurde...
         Place.GetPredictions(Rec.Address);
     end;
 
     /// <summary>
-    /// Sets all Address values if Addressfield get validated.
+    /// Sets all Address values if an Addressfield get validated.
     /// </summary>
     procedure setAddressData()
     var

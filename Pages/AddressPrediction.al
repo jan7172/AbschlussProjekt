@@ -39,6 +39,7 @@ page 50101 "AddressPrediction"
                 trigger OnAction()
                 var
                     SetPostCode: Record SetPostCode;
+                    SetPostCodeAsPage: Page SetPostCode;
                 begin
                     SetPostCode.Init();
                     SetPostCode.TempLocation := Rec.TempLocation;
@@ -49,6 +50,5 @@ page 50101 "AddressPrediction"
         }
     }
     var
-        AddressNotListedLbl: Label '';
         Place: Codeunit Place;
 }
