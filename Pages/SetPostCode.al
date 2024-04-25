@@ -12,9 +12,9 @@ page 50103 "SetPostCode"
     {
         area(Content)
         {
-            repeater(Main)
+            group(Main)
             {
-                field(TempPostCode; Rec.TempPostCode)
+                field(TempPostCode; TempPostCode)
                 {
                     ApplicationArea = All;
                     trigger OnValidate()
@@ -22,11 +22,30 @@ page 50103 "SetPostCode"
                         Place: Codeunit Place;
                         AddressPrediction: Record AddressPredictions;
                     begin
-                        Place.CheckForUpdatedPostCodeByUser(Rec.TempPostCode + ' ' + Rec.TempLocation);
+                        if rec.FindLast() then
+                            Message('test');
+                        Place.CheckForUpdatedPostCodeByUser(TempPostCode + ' ' + TempAddress);
                         Close();
                     end;
+                }
+                field(TempAddress; TempAddress)
+                {
+
                 }
             }
         }
     }
+    trigger OnOpenPage()
+    begin
+        if rec.Get(1) then
+            Message('test123');
+        TempAddress := Rec.TempLocation;
+    end;
+
+    var
+        TempPostCode: Text[20];
+        TempLocation: Text[255];
+        TempAddress: Text[255];
 }
+
+// Die Daten BEIM AUFRUFEN DER PAGE (setPostCode) übergeben.

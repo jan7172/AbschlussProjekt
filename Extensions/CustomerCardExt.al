@@ -9,13 +9,13 @@ pageextension 50100 CustomerCardExt extends "Customer Card"
         {
             trigger OnBeforeValidate()
             begin
-                if AddressPrediction.FindSet() then;
+                if AddressPrediction.FindSet() then; //Breakpoint
                 AddressPrediction.DeleteAll();
             end;
 
             trigger OnAfterValidate()
             begin
-                checkIfAddressIsValid();
+                checkIfAddressIsValid();    //Breakpoint
                 setAddressData();
             end;
         }
@@ -35,8 +35,15 @@ pageextension 50100 CustomerCardExt extends "Customer Card"
 
     local procedure checkIfAddressIsValid()
     begin
-        if PlaceAPISetup.FindLast() then; //Geplante Erweiterung: Abfangen wenn kein Setup eingerichtet wurde...
-        Place.GetPredictions(Rec.Address);
+        if PlaceAPISetup.FindLast() then begin
+            if PlaceAPISetup.APiKey <> '' then begin
+                Place.GetPredictions(Rec.Address);
+            end else begin
+                Message('Your API-Key is not valid. Please enter a valid API-Key in the Place Api Setup.');
+            end
+        end else begin
+            Message('Your API-Key is not valid. Please enter a valid API-Key in the Place Api Setup.');
+        end;
     end;
 
     /// <summary>

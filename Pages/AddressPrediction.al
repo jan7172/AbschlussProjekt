@@ -39,12 +39,13 @@ page 50101 "AddressPrediction"
                 trigger OnAction()
                 var
                     SetPostCode: Record SetPostCode;
-                    SetPostCodeAsPage: Page SetPostCode;
                 begin
                     SetPostCode.Init();
+                    SetPostCode.ID := 1;
                     SetPostCode.TempLocation := Rec.TempLocation;
                     SetPostCode.Insert();
-                    Page.RunModal(50103, SetPostCode);
+                    Page.RunModal(50103); // <--- SetPostCode Page
+                    //Hier die Adresse an die SetPostCode Page übergeben.
                 end;
             }
         }

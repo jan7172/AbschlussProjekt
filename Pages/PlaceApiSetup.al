@@ -20,6 +20,7 @@ page 50100 "PlaceApiSetup"
                     ApplicationArea = All;
                     trigger OnValidate()
                     begin
+                        checkIfApiKeyIsValid();
                         changeAPIKey();
                     end;
                 }
@@ -81,6 +82,28 @@ page 50100 "PlaceApiSetup"
             Rec.Delete();
             Rec.APiKey := TempKey;
             Rec.Insert();
+        end;
+    end;
+
+    local procedure checkIfApiKeyIsValid()
+    var
+        HttpClient: HttpClient;
+        ResponseMessage: HttpResponseMessage;
+        ResponseMessageAsString: Text;
+        JsonContent: JsonObject;
+        JsonContentAsToken: JsonToken;
+        ErrorMessageAsString: Text;
+    begin
+        if HttpClient.Get('https://maps.googleapis.com/maps/api/place/autocomplete/json?key=' + Rec.APiKey + '&input=New York', ResponseMessage) then begin
+            ResponseMessage.Content.ReadAs(ResponseMessageAsString);
+            JsonContent.ReadFrom(ResponseMessageAsString);
+            if JsonContent.Get('error_message', JsonContentAsToken) then begin
+                ErrorMessageAsString := Format(JsonContentAsToken).Replace('"', '') + '\ More Details?';
+                if Dialog.Confirm(ErrorMessageAsString) then begin
+                    Message(Format(ResponseMessageAsString));
+                end else begin
+                end;
+            end;
         end;
     end;
 

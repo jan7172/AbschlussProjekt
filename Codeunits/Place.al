@@ -15,32 +15,37 @@ codeunit 50100 Place
         PlaceIDAsToken: JsonToken;
 
     begin
-        if PlaceSetup.FindLast() then; //Geplante Erweiterung: Abfangen wenn kein Setup eingerichtet wurde...
-        AddressPrediction.DeleteAll();
-        if SetPostCode.FindLast() then;
-        if TempUpdatedPostCode = '' then begin
-            HttpClient.Get('https://maps.googleapis.com/maps/api/place/autocomplete/json?key=' + PlaceSetup.APiKey + '&language=' + PlaceSetup.LanguageCode + '&input=' + LocationInput, ResponseMessage);
-            TempAddress := LocationInput;
-        end else
-            if TempUpdatedPostCode <> '' then begin
-                if SetPostCode.FindLast() then;
-                HttpClient.Get('https://maps.googleapis.com/maps/api/place/autocomplete/json?key=' + PlaceSetup.APiKey + '&language=' + PlaceSetup.LanguageCode + '&input=' + TempAddress, ResponseMessage);
+        if PlaceSetup.FindLast() then begin
+            if PlaceSetup.APiKey <> '' then begin
+                AddressPrediction.DeleteAll();
+                if TempUpdatedPostCode = '' then begin
+                    HttpClient.Get('https://maps.googleapis.com/maps/api/place/autocomplete/json?key=' + PlaceSetup.APiKey + '&language=' + PlaceSetup.LanguageCode + '&input=' + LocationInput, ResponseMessage);
+                    TempAddress := LocationInput;
+                end else
+                    if TempUpdatedPostCode <> '' then begin
+                        HttpClient.Get('https://maps.googleapis.com/maps/api/place/autocomplete/json?key=' + PlaceSetup.APiKey + '&language=' + PlaceSetup.LanguageCode + '&input=' + TempAddress, ResponseMessage);
+                    end;
+                ResponseMessage.Content.ReadAs(ResponseJsonAsString);
+                JsonContent.ReadFrom(ResponseJsonAsString);
+                JsonContent.Get('predictions', JsonContentAsToken);
+                PredictionArray := JsonContentAsToken.AsArray();
+                foreach JsonContentAsToken in PredictionArray do begin
+                    AddressPrediction.Init();
+                    JsonContentAsToken.AsObject().Get('description', DescriptionArrayAsToken);
+                    AddressPrediction.Description := Format(DescriptionArrayAsToken);
+                    JsonContentAsToken.AsObject().Get('place_id', PlaceIDAsToken);
+                    AddressPrediction.Place_ID := Format(PlaceIDAsToken);
+                    AddressPrediction.TempLocation := LocationInput;
+                    AddressPrediction.Insert();
+                end;
+                if AddressPrediction.FindFirst() then;
+                Page.RunModal(50101, AddressPrediction);
+            end else begin
+                Message('Your API-Key is not valid. Please enter a valid API-Key in the Place Api Setup.');
             end;
-        ResponseMessage.Content.ReadAs(ResponseJsonAsString);
-        JsonContent.ReadFrom(ResponseJsonAsString);
-        JsonContent.Get('predictions', JsonContentAsToken);
-        PredictionArray := JsonContentAsToken.AsArray();
-        foreach JsonContentAsToken in PredictionArray do begin
-            AddressPrediction.Init();
-            JsonContentAsToken.AsObject().Get('description', DescriptionArrayAsToken);
-            AddressPrediction.Description := Format(DescriptionArrayAsToken);
-            JsonContentAsToken.AsObject().Get('place_id', PlaceIDAsToken);
-            AddressPrediction.Place_ID := Format(PlaceIDAsToken);
-            AddressPrediction.TempLocation := LocationInput;
-            AddressPrediction.Insert();
+        end else begin
+            Message('Your API-Key is not valid. Please enter a valid API-Key in the Place Api Setup.');
         end;
-        if AddressPrediction.FindFirst() then;
-        Page.RunModal(50101, AddressPrediction);
     end;
 
     /// <summary>
@@ -110,12 +115,10 @@ codeunit 50100 Place
     procedure CheckForUpdatedPostCodeByUser(input: Text[255])
     var
         Addressprediction: Record AddressPredictions;
-        SetPostCode: Record SetPostCode;
     begin
-        TempUpdatedPostCode := 'updated';
+        TempUpdatedPostCode := 'updated'; //Wird geändert, diese Lösung ist nicht sauber.
         TempAddress := input;
         GetPredictions(Addressprediction.TempLocation);
-        Message('Test');
     end;
 
     var
@@ -128,6 +131,5 @@ codeunit 50100 Place
         AddressPrediction: Record AddressPredictions;
         Google_Place_ID: Text[255];
         TempUpdatedPostCode: Text[20];
-        SetPostCode: Record SetPostCode;
         TempAddress: Text[255];
 }

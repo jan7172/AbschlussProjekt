@@ -1,15 +1,12 @@
-/// <summary>
-/// Table SetPostCode (ID 50103).
-/// </summary>
 table 50103 SetPostCode
 {
     TableType = Temporary;
 
     fields
     {
-        field(1; "TempPostCode"; Text[20])
+        field(1; "ID"; Integer)
         {
-            Caption = 'TempPostCode';
+            Caption = 'ID';
         }
         field(2; "TempLocation"; Text[255])
         {
@@ -19,7 +16,7 @@ table 50103 SetPostCode
 
     keys
     {
-        key(PK; TempPostCode)
+        key(PK; ID)
         {
         }
     }
