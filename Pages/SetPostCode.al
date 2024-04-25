@@ -37,6 +37,7 @@ page 50103 "SetPostCode"
     }
     trigger OnOpenPage()
     begin
+        if rec.FindSet() then;
         if rec.Get(1) then
             Message('test123');
         TempAddress := Rec.TempLocation;
