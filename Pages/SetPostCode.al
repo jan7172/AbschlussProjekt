@@ -19,30 +19,40 @@ page 50103 "SetPostCode"
                     ApplicationArea = All;
                     trigger OnValidate()
                     var
-                        Place: Codeunit Place;
                         AddressPrediction: Record AddressPredictions;
                     begin
-                        Place.CheckForUpdatedPostCodeByUser(TempPostCode + ' ' + TempLocation);
+                        GetPostCode(TempPostCode);
                         Close();
                     end;
                 }
             }
         }
     }
-    // trigger OnOpenPage()
-    // begin
-    //     if rec.FindSet() then;
-    //     if rec.Get(1) then
-    //         Message('test123');
-    //     TempAddress := Rec.TempLocation;
-    // end;
+
+    local procedure GetPostCode(PostCode: Text[20])
+    begin
+        TempPostCode := PostCode;
+    end;
+
+    /// <summary>
+    /// GetAddressData.
+    /// </summary>
+    /// <param name="Address">Text[255].</param>
+    procedure GetAddressData(Address: Text[255])
+    var
+        PostCode: Text[20];
+    begin
+        Page.RunModal(50103);
+        TempLocation := Address;
+        Place.CheckForUpdatedPostCodeByUser(TempPostCode + ' ' + TempLocation);
+    end;
 
     var
         TempPostCode: Text[20];
         TempLocation: Text[255];
-    // TempAddress: Text[255];
+        Place: Codeunit Place;
 }
 
 // Die Daten BEIM AUFRUFEN DER PAGE (setPostCode) übergeben.
 
-//In der Page (SetPostCode) lokale Variable und bevor ich die Page aufrufe übergebe ich den Record
+//In der Page (SetPostCode) eine Funktion und eine lokale Variable. Bevor ich die Page aufrufe übergebe ich den Record

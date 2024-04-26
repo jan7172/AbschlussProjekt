@@ -38,13 +38,10 @@ page 50101 "AddressPrediction"
                 ToolTip = 'If the address you are looking for is not listed, it cannot be clearly identified. Please enter the post code of the destination';
                 trigger OnAction()
                 var
-                // SetPostCode: Record SetPostCode;
+                    SetPostCode: Page SetPostCode;
                 begin
-                    // SetPostCode.Init();
-                    // SetPostCode.ID := 1;
-                    // SetPostCode.TempLocation := Rec.TempLocation;
-                    // SetPostCode.Insert();
-                    Page.RunModal(50103); // <--- SetPostCode Page
+                    SetPostCode.GetAddressData(rec.TempLocation);
+                    // <--- SetPostCode Page
                     //Hier die Adresse an SetPostCode übergeben.
                 end;
             }
