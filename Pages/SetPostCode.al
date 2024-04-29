@@ -22,7 +22,7 @@ page 50103 "SetPostCode"
                         AddressPrediction: Record AddressPredictions;
                     begin
                         GetPostCode(TempPostCode);
-                        Close();
+                        CurrPage.Close();
                     end;
                 }
             }
@@ -42,8 +42,8 @@ page 50103 "SetPostCode"
     var
         PostCode: Text[20];
     begin
-        Page.RunModal(50103);
         TempLocation := Address;
+        Page.RunModal(50103);
         Place.CheckForUpdatedPostCodeByUser(TempPostCode + ' ' + TempLocation);
     end;
 
