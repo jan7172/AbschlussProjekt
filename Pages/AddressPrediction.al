@@ -40,6 +40,7 @@ page 50101 "AddressPrediction"
                 var
                     SetPostCode: Page SetPostCode;
                 begin
+                    Page.RunModal(50103);
                     SetPostCode.GetAddressData(rec.TempLocation);
                     //Hier die Adresse an SetPostCode übergeben.
                 end;

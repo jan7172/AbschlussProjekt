@@ -56,3 +56,5 @@ page 50103 "SetPostCode"
 // Die Daten BEIM AUFRUFEN DER PAGE (setPostCode) übergeben.
 
 //In der Page (SetPostCode) eine Funktion und eine lokale Variable. Bevor ich die Page aufrufe übergebe ich den Record
+
+//Geht mit eienm RunModal einfach so nicht
