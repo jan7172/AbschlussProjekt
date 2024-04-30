@@ -21,18 +21,13 @@ page 50103 "SetPostCode"
                     var
                         AddressPrediction: Record AddressPredictions;
                     begin
-                        SetPostCode(TempPostCode);
+                        Place.CheckForUpdatedPostCodeByUser(TempPostCode + ' ' + TempLocation);
                         CurrPage.Close();
                     end;
                 }
             }
         }
     }
-
-    local procedure SetPostCode(PostCode: Text[20])
-    begin
-        TempPostCode := PostCode;
-    end;
 
     /// <summary>
     /// GetAddressData.
@@ -43,8 +38,6 @@ page 50103 "SetPostCode"
         PostCode: Text[20];
     begin
         TempLocation := Address;
-        Page.RunModal(50103);
-        Place.CheckForUpdatedPostCodeByUser(TempPostCode + ' ' + TempLocation);
     end;
 
     var
@@ -56,5 +49,3 @@ page 50103 "SetPostCode"
 // Die Daten BEIM AUFRUFEN DER PAGE (setPostCode) übergeben.
 
 //In der Page (SetPostCode) eine Funktion und eine lokale Variable. Bevor ich die Page aufrufe übergebe ich den Record
-
-//Geht mit eienm RunModal einfach so nicht

@@ -41,6 +41,9 @@ page 50101 "AddressPrediction"
                     SetPostCode: Page SetPostCode;
                 begin
                     SetPostCode.GetAddressData(rec.TempLocation);
+                    CurrPage.Close();
+                    SetPostCode.RunModal();
+                    CurrPage.Close();
                     //Hier die Adresse an SetPostCode übergeben.
                 end;
             }
