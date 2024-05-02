@@ -3,6 +3,7 @@
 /// </summary>
 table 50102 AddressData
 {
+    Caption = 'Addressdata';
 
     fields
     {

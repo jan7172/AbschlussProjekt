@@ -1,6 +1,7 @@
 table 50101 AddressPredictions
 {
     TableType = Temporary;
+    Caption = 'Address Predictions';
 
     fields
     {
@@ -23,6 +24,7 @@ table 50101 AddressPredictions
     {
         key("PK"; "Place_ID")
         {
+
         }
     }
 

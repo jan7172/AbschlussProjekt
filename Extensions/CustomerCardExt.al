@@ -65,7 +65,5 @@ pageextension 50100 CustomerCardExt extends "Customer Card"
     var
         PlaceAPISetup: Record PlaceAPISetup;
         Place: Codeunit Place;
-        CompleteAddress: Text[100];
-        CompleteAddress2: Text[100];
         AddressPrediction: Record AddressPredictions;
 }

@@ -65,7 +65,10 @@ page 50100 "PlaceApiSetup"
         DevSettingVisibility: Boolean;
         EnableDevSettings: Boolean;
 
-    local procedure checkIfApiKeyIsEmpty()
+    /// <summary>
+    /// Checks whether the entered API key is empty
+    /// </summary>
+    local procedure CheckIfApiKeyIsEmpty()
     begin
         if Rec.FindLast() then;
         TempKey := Rec.APiKey;
@@ -74,18 +77,25 @@ page 50100 "PlaceApiSetup"
         end;
     end;
 
-    local procedure changeAPIKey()
+
+    /// <summary>
+    /// Changes the API key
+    /// </summary>
+    local procedure ChangeAPIKey()
     begin
-        if Dialog.Confirm('Change API Key?') then begin //yes
+        if Dialog.Confirm('Change API Key?') then begin //<--UserInput is yes
             Message('API Key sucessfull changed');
-        end else begin //no
+        end else begin //<--UsetInput is no
             Rec.Delete();
             Rec.APiKey := TempKey;
             Rec.Insert();
         end;
     end;
 
-    local procedure checkIfApiKeyIsValid()
+    /// <summary>
+    /// Checks whether the entered API key is valid
+    /// </summary>
+    local procedure CheckIfApiKeyIsValid()
     var
         HttpClient: HttpClient;
         ResponseMessage: HttpResponseMessage;
@@ -109,6 +119,6 @@ page 50100 "PlaceApiSetup"
 
     trigger OnOpenPage()
     begin
-        checkIfApiKeyIsEmpty();
+        CheckIfApiKeyIsEmpty();
     end;
 }

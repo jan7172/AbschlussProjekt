@@ -5,8 +5,6 @@ page 50103 "SetPostCode"
 {
     Caption = 'SetPostCode';
     PageType = CardPart;
-    // SourceTable = SetPostCode;
-    // SourceTableTemporary = true;
 
     layout
     {
@@ -45,7 +43,3 @@ page 50103 "SetPostCode"
         TempLocation: Text[255];
         Place: Codeunit Place;
 }
-
-// Die Daten BEIM AUFRUFEN DER PAGE (setPostCode) übergeben.
-
-//In der Page (SetPostCode) eine Funktion und eine lokale Variable. Bevor ich die Page aufrufe übergebe ich den Record

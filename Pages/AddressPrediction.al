@@ -42,7 +42,6 @@ page 50101 "AddressPrediction"
                     CurrPage.Close();
                     SetPostCode.RunModal();
                     CurrPage.Close();
-                    //Hier die Adresse an SetPostCode übergeben.
                 end;
             }
         }

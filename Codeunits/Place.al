@@ -114,10 +114,8 @@ codeunit 50100 Place
     /// </summary>
     /// <param name="input">Boolean.</param>
     procedure CheckForUpdatedPostCodeByUser(input: Text[255])
-    var
-        Addressprediction: Record AddressPredictions;
     begin
-        TempUpdatedPostCode := 'updated'; //Wird geändert, diese Lösung ist nicht sauber.
+        TempUpdatedPostCode := 'updated';
         TempAddress := input;
         GetPredictions(input);
         AddressIsFinal := true;
@@ -136,7 +134,6 @@ codeunit 50100 Place
         JsonContent: JsonObject;
         JsonContentAsToken: JsonToken;
         AddressPrediction: Record AddressPredictions;
-        Google_Place_ID: Text[255];
         TempUpdatedPostCode: Text[20];
         TempAddress: Text[255];
         AddressIsFinal: Boolean;

@@ -5,7 +5,6 @@ table 50100 PlaceAPISetup
 {
     Caption = 'Place Setup';
 
-
     fields
     {
         field(1; "APiKey"; Text[255])
@@ -26,6 +25,7 @@ table 50100 PlaceAPISetup
     {
         key(PK; "APiKey")
         {
+
         }
     }
 }
