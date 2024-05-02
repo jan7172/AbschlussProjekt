@@ -1,5 +1,5 @@
 /// <summary>
-/// Page SetPostCode (ID 50103).
+/// Page Set Postode (ID 50103).
 /// </summary>
 page 50103 "SetPostCode"
 {
@@ -30,7 +30,7 @@ page 50103 "SetPostCode"
     }
 
     /// <summary>
-    /// GetAddressData.
+    /// Transmits addressdata.
     /// </summary>
     /// <param name="Address">Text[255].</param>
     procedure GetAddressData(Address: Text[255])

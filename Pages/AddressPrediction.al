@@ -18,11 +18,9 @@ page 50101 "AddressPrediction"
                     Editable = false;
                     ApplicationArea = All;
                     trigger OnAssistEdit()
-                    var
-                        AddressPrediction: Page AddressPrediction;
                     begin
                         Place.GetAddressData(Rec.Place_ID);
-                        Close();
+                        CurrPage.Close();
                     end;
                 }
             }

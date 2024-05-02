@@ -39,7 +39,8 @@ codeunit 50100 Place
                     AddressPrediction.Insert();
                 end;
                 if AddressPrediction.FindFirst() then;
-                Page.RunModal(50101, AddressPrediction);
+                if AddressIsFinal = false then
+                    Page.RunModal(50101, AddressPrediction);
             end else begin
                 Message('Your API-Key is not valid. Please enter a valid API-Key in the Place Api Setup.');
             end;
@@ -118,7 +119,13 @@ codeunit 50100 Place
     begin
         TempUpdatedPostCode := 'updated'; //Wird geändert, diese Lösung ist nicht sauber.
         TempAddress := input;
-        GetPredictions(Addressprediction.TempLocation);
+        GetPredictions(input);
+        AddressIsFinal := true;
+    end;
+
+    trigger OnRun()
+    begin
+        AddressIsFinal := false;
     end;
 
     var
@@ -132,4 +139,5 @@ codeunit 50100 Place
         Google_Place_ID: Text[255];
         TempUpdatedPostCode: Text[20];
         TempAddress: Text[255];
+        AddressIsFinal: Boolean;
 }

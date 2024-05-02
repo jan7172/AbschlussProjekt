@@ -9,14 +9,14 @@ pageextension 50100 CustomerCardExt extends "Customer Card"
         {
             trigger OnBeforeValidate()
             begin
-                if AddressPrediction.FindSet() then; //Breakpoint
+                if AddressPrediction.FindSet() then;
                 AddressPrediction.DeleteAll();
             end;
 
             trigger OnAfterValidate()
             begin
-                checkIfAddressIsValid();    //Breakpoint
-                setAddressData();
+                CheckIfAddressIsValid();
+                SetAddressData();
             end;
         }
         modify("Address 2")
@@ -33,7 +33,7 @@ pageextension 50100 CustomerCardExt extends "Customer Card"
         }
     }
 
-    local procedure checkIfAddressIsValid()
+    local procedure CheckIfAddressIsValid()
     begin
         if PlaceAPISetup.FindLast() then begin
             if PlaceAPISetup.APiKey <> '' then begin
@@ -47,9 +47,9 @@ pageextension 50100 CustomerCardExt extends "Customer Card"
     end;
 
     /// <summary>
-    /// Sets all Address values if an Addressfield get validated.
+    /// Sets all address values if an addressfield get validated.
     /// </summary>
-    procedure setAddressData()
+    procedure SetAddressData()
     var
         AddressData: Record AddressData;
     begin
