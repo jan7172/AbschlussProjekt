@@ -33,6 +33,9 @@ pageextension 50100 CustomerCardExt extends "Customer Card"
         }
     }
 
+    /// <summary>
+    /// Checks whether the entered address is valid.
+    /// </summary>
     local procedure CheckIfAddressIsValid()
     begin
         if PlaceAPISetup.FindLast() then begin
