@@ -7,7 +7,8 @@ codeunit 50100 Place
     /// Checks whether an address is valid and suggests address predictions.
     /// </summary>
     /// <param name="LocationInput">Location | Text[255].</param>
-    procedure GetPredictions(LocationInput: Text[255])
+    /// <returns>Return variable Output of type array [255] of Text.</returns>
+    procedure GetPredictions(LocationInput: Text[255]) PredictionRec: Record AddressPredictions
     var
         PredictionArray: JsonArray;
         DescriptionArrayAsToken: JsonToken;
@@ -30,17 +31,15 @@ codeunit 50100 Place
                 JsonContent.Get('predictions', JsonContentAsToken);
                 PredictionArray := JsonContentAsToken.AsArray();
                 foreach JsonContentAsToken in PredictionArray do begin
-                    AddressPrediction.Init();
+                    PredictionRec.Init();
                     JsonContentAsToken.AsObject().Get('description', DescriptionArrayAsToken);
-                    AddressPrediction.Description := Format(DescriptionArrayAsToken);
+                    PredictionRec.Description := Format(DescriptionArrayAsToken);
                     JsonContentAsToken.AsObject().Get('place_id', PlaceIDAsToken);
-                    AddressPrediction.Place_ID := Format(PlaceIDAsToken);
-                    AddressPrediction.TempLocation := LocationInput;
-                    AddressPrediction.Insert();
+                    PredictionRec.Place_ID := Format(PlaceIDAsToken);
+                    PredictionRec.TempLocation := LocationInput;
+                    PredictionRec.Insert();
                 end;
                 if AddressPrediction.FindFirst() then;
-                if AddressIsFinal = false then
-                    Page.RunModal(50101, AddressPrediction);
             end else begin
                 Message('Your API-Key is not valid. Please enter a valid API-Key in the Place Api Setup.');
             end;
@@ -118,13 +117,8 @@ codeunit 50100 Place
         TempUpdatedPostCode := 'updated';
         TempAddress := input;
         GetPredictions(input);
-        AddressIsFinal := true;
     end;
 
-    trigger OnRun()
-    begin
-        AddressIsFinal := false;
-    end;
 
     var
         HttpClient: HttpClient;
@@ -136,5 +130,4 @@ codeunit 50100 Place
         AddressPrediction: Record AddressPredictions;
         TempUpdatedPostCode: Text[20];
         TempAddress: Text[255];
-        AddressIsFinal: Boolean;
 }

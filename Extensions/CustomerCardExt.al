@@ -7,25 +7,16 @@ pageextension 50100 CustomerCardExt extends "Customer Card"
     {
         modify(Address)
         {
-            trigger OnBeforeValidate()
-            begin
-                if AddressPrediction.FindSet() then;
-                AddressPrediction.DeleteAll();
-            end;
-
             trigger OnAfterValidate()
             begin
                 CheckIfAddressIsValid();
+                if Place.GetPredictions(rec.Address).FindFirst() then;
+                Page.RunModal(50101, Place.GetPredictions(rec.Address));
                 SetAddressData();
             end;
         }
         modify("Address 2")
         {
-            trigger OnBeforeValidate()
-            begin
-                AddressPrediction.DeleteAll();
-            end;
-
             trigger OnAfterValidate()
             begin
 
