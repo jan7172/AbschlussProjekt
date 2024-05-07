@@ -15,13 +15,6 @@ pageextension 50100 CustomerCardExt extends "Customer Card"
                 SetAddressData();
             end;
         }
-        modify("Address 2")
-        {
-            trigger OnAfterValidate()
-            begin
-
-            end;
-        }
     }
 
     /// <summary>
