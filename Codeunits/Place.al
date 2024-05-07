@@ -104,16 +104,21 @@ codeunit 50100 Place
     end;
 
     /// <summary>
-    /// Checks whether the user has updated the post code
+    /// Checks whether the entered address is valid.
     /// </summary>
-    /// <param name="input">Boolean.</param>
-    // procedure CheckForUpdatedPostCodeByUser(input: Text[255])
-    // begin
-    //     TempUpdatedPostCode := 'updated';
-    //     TempAddress := input;
-    //     GetPredictions(input);
-    // end;
-
+    /// <param name="Address">Text[100].</param>
+    procedure CheckIfAddressIsValid(Address: Text[100])
+    begin
+        if PlaceSetup.FindLast() then begin
+            if PlaceSetup.APiKey <> '' then begin
+                GetPredictions(Address);
+            end else begin
+                Message('Your API-Key is not valid. Please enter a valid API-Key in the Place Api Setup.');
+            end
+        end else begin
+            Message('Your API-Key is not valid. Please enter a valid API-Key in the Place Api Setup.');
+        end;
+    end;
 
     var
         HttpClient: HttpClient;
@@ -123,8 +128,5 @@ codeunit 50100 Place
         JsonContent: JsonObject;
         JsonContentAsToken: JsonToken;
         AddressPrediction: Record AddressPredictions;
-
-        // TempUpdatedPostCode: Text[20];
-
         TempAddress: Text[255];
 }

@@ -1,7 +1,7 @@
 /// <summary>
-/// PageExtension CustomerCardExt (ID 50100) extends Record Customer Card with Place Autocomplete.
+/// PageExtension VendorCardExt (ID 50100) extends Record Vensor Card with Place Autocomplete.
 /// </summary>
-pageextension 50100 CustomerCardExt extends "Customer Card"
+pageextension 50101 VendorCardExt extends "Vendor Card"
 {
     layout
     {
@@ -16,7 +16,6 @@ pageextension 50100 CustomerCardExt extends "Customer Card"
             end;
         }
     }
-
 
     /// <summary>
     /// Sets all address values if an addressfield get validated.
