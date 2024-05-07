@@ -19,13 +19,8 @@ codeunit 50100 Place
         if PlaceSetup.FindLast() then begin
             if PlaceSetup.APiKey <> '' then begin
                 AddressPrediction.DeleteAll();
-                if TempUpdatedPostCode = '' then begin
-                    HttpClient.Get('https://maps.googleapis.com/maps/api/place/autocomplete/json?key=' + PlaceSetup.APiKey + '&language=' + PlaceSetup.LanguageCode + '&input=' + LocationInput, ResponseMessage);
-                    TempAddress := LocationInput;
-                end else
-                    if TempUpdatedPostCode <> '' then begin
-                        HttpClient.Get('https://maps.googleapis.com/maps/api/place/autocomplete/json?key=' + PlaceSetup.APiKey + '&language=' + PlaceSetup.LanguageCode + '&input=' + TempAddress, ResponseMessage);
-                    end;
+                HttpClient.Get('https://maps.googleapis.com/maps/api/place/autocomplete/json?key=' + PlaceSetup.APiKey + '&language=' + PlaceSetup.LanguageCode + '&input=' + LocationInput, ResponseMessage);
+                TempAddress := LocationInput;
                 ResponseMessage.Content.ReadAs(ResponseJsonAsString);
                 JsonContent.ReadFrom(ResponseJsonAsString);
                 JsonContent.Get('predictions', JsonContentAsToken);
@@ -112,12 +107,12 @@ codeunit 50100 Place
     /// Checks whether the user has updated the post code
     /// </summary>
     /// <param name="input">Boolean.</param>
-    procedure CheckForUpdatedPostCodeByUser(input: Text[255])
-    begin
-        TempUpdatedPostCode := 'updated';
-        TempAddress := input;
-        GetPredictions(input);
-    end;
+    // procedure CheckForUpdatedPostCodeByUser(input: Text[255])
+    // begin
+    //     TempUpdatedPostCode := 'updated';
+    //     TempAddress := input;
+    //     GetPredictions(input);
+    // end;
 
 
     var
@@ -128,6 +123,8 @@ codeunit 50100 Place
         JsonContent: JsonObject;
         JsonContentAsToken: JsonToken;
         AddressPrediction: Record AddressPredictions;
-        TempUpdatedPostCode: Text[20];
+
+        // TempUpdatedPostCode: Text[20];
+
         TempAddress: Text[255];
 }
