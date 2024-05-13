@@ -114,7 +114,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Method CheckIfApiKeyIsEmpty - NamedType ApiKeyEmptyErrorLbl</note>
         </trans-unit>
         <trans-unit id="Page 1245818576 - Method 3744446174 - NamedType 3382200671" size-unit="char" translate="yes" xml:space="preserve">
-          <source>\ More Details?</source>
+          <source> \ More Details?</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Method CheckIfApiKeyIsValid - NamedType MoreDetailsLbl</note>
         </trans-unit>

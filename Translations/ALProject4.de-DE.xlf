@@ -136,9 +136,10 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Method CheckIfApiKeyIsEmpty - NamedType ApiKeyEmptyErrorLbl</note>
         </trans-unit>
         <trans-unit id="Page 1245818576 - Method 3744446174 - NamedType 3382200671" size-unit="char" translate="yes" xml:space="preserve">
-          <source>\ More Details?</source>
-          <target>Weitere Details?</target>
+          <source> \ More Details?</source>
+          <target>[NAB: REVIEW] Weitere Details?</target>
           <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Method CheckIfApiKeyIsValid - NamedType MoreDetailsLbl</note>
         </trans-unit>
         <trans-unit id="Page 1245818576 - Control 3690503181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">

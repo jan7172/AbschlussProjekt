@@ -111,7 +111,7 @@ page 50100 "PlaceApiSetup"
         JsonContent: JsonObject;
         JsonContentAsToken: JsonToken;
         ErrorMessageAsString: Text;
-        MoreDetailsLbl: Label '\ More Details?';
+        MoreDetailsLbl: Label ' \ More Details?';
     begin
         if HttpClient.Get('https://maps.googleapis.com/maps/api/place/autocomplete/json?key=' + Rec.APiKey + '&input=New York', ResponseMessage) then begin
             ResponseMessage.Content.ReadAs(ResponseMessageAsString);
