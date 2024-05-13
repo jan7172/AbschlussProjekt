@@ -36,3 +36,8 @@ pageextension 50105 CompanyInfoExt extends "Company Information"
         PlaceAPISetup: Record PlaceAPISetup;
         Place: Codeunit Place;
 }
+
+
+/* 
+    
+ */
