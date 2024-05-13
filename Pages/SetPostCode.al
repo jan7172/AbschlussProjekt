@@ -12,8 +12,10 @@ page 50103 "SetPostCode"
         {
             group(Main)
             {
+                Caption = 'Post Code';
                 field(TempPostCode; TempPostCode)
                 {
+                    Caption = 'Enter Post Code';
                     ApplicationArea = All;
                 }
             }

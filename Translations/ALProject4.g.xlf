@@ -88,6 +88,11 @@
           <note from="Developer" annotates="general" priority="2">Translate this tooltip</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page AddressPrediction - Action AddressNotListed - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 2960578149 - Action 176483444 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address not listed</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page AddressPrediction - Action AddressNotListed - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1245818576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Place Api Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -122,6 +127,16 @@
           <source>SetPostCode</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SetPostCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4248694681 - Control 3959405189 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SetPostCode - Control Main - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4248694681 - Control 555647499 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enter Post Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SetPostCode - Control TempPostCode - Property Caption</note>
         </trans-unit>
       </group>
     </body>
