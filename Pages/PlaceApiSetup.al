@@ -55,7 +55,9 @@ page 50100 "PlaceApiSetup"
                     var
                         place: Codeunit Place;
                     begin
-                        place.GetPredictions(Rec.TestLocation);
+                        Place.CheckIfAddressIsValid(Rec.TestLocation);
+                        if Place.GetPredictions(rec.TestLocation).FindFirst() then;
+                        Page.RunModal(50101, Place.GetPredictions(Rec.TestLocation));
                     end;
                 }
             }
