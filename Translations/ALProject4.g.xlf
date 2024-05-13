@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="ALProject4">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 3881978066 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Addressdata</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table AddressData - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3881978066 - Field 3168444338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table AddressData - Field Address - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3881978066 - Field 714791889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>City</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table AddressData - Field City - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3881978066 - Field 1856816140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Country</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table AddressData - Field Country - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3881978066 - Field 3374398455 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table AddressData - Field PostCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3438137500 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address Predictions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table AddressPredictions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3438137500 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table AddressPredictions - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3438137500 - Field 2932692619 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Place ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table AddressPredictions - Field Place_ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3438137500 - Field 2862170579 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Temp Location</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table AddressPredictions - Field TempLocation - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3098797072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Place Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table PlaceAPISetup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3098797072 - Field 1796520249 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Api Key</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table PlaceAPISetup - Field APiKey - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3098797072 - Field 1859002777 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Language Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table PlaceAPISetup - Field LanguageCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3098797072 - Field 1526265757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Test</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table PlaceAPISetup - Field TestLocation - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2960578149 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prediction</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page AddressPrediction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2960578149 - Action 176483444 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>If the address you are looking for is not listed, it cannot be clearly identified. Please enter the post code of the destination</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page AddressPrediction - Action AddressNotListed - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1245818576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Place Api Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1245818576 - Control 1526265757 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Just For Develope Purposes</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Control TestLocation - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 4248694681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SetPostCode</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SetPostCode - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

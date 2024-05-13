@@ -22,7 +22,7 @@
   ],
   "showMyCode": true,
   "runtime": "7.0",
-  "features": [
+  "features": ["TranslationFile",
     "NoImplicitWith"
   ]
 }
