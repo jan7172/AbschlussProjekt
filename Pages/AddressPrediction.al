@@ -33,7 +33,7 @@ page 50101 "AddressPrediction"
             action(AddressNotListed)
             {
                 ApplicationArea = All;
-                ToolTip = 'If the address you are looking for is not listed, it cannot be clearly identified. Please enter the post code of the destination';
+                ToolTip = 'If the address you are looking for is not listed, it cannot be clearly identified. Please enter the post code of the destination', Locked = false, Comment = 'Translate this tooltip';
                 trigger OnAction()
                 var
                     SetPostCode: Page SetPostCode;

@@ -68,6 +68,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table PlaceAPISetup - Field TestLocation - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3600324581 - NamedType 70965012" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Your API-Key is not valid. Please enter a valid API-Key in the Place Api Setup.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Place - NamedType EmptyApiKeyErrorLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3600324581 - Method 4089833172 - NamedType 515597094" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The entered address does not include a house number. Please enter a house number.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Place - Method GetAddressData - NamedType EmptyHouseNoErrorLbl</note>
+        </trans-unit>
         <trans-unit id="Page 2960578149 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Prediction</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -75,7 +85,7 @@
         </trans-unit>
         <trans-unit id="Page 2960578149 - Action 176483444 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>If the address you are looking for is not listed, it cannot be clearly identified. Please enter the post code of the destination</source>
-          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Developer" annotates="general" priority="2">Translate this tooltip</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page AddressPrediction - Action AddressNotListed - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1245818576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -83,9 +93,29 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1245818576 - Method 1911403107 - NamedType 3387166661" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Change API Key?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Method ChangeAPIKey - NamedType ChangeKeyLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1245818576 - Method 1911403107 - NamedType 569618065" size-unit="char" translate="yes" xml:space="preserve">
+          <source>API Key sucessfull changed</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Method ChangeAPIKey - NamedType ApiKeyChangedLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1245818576 - Method 394955867 - NamedType 2451300220" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Api Key is empty.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Method CheckIfApiKeyIsEmpty - NamedType ApiKeyEmptyErrorLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1245818576 - Method 3744446174 - NamedType 3382200671" size-unit="char" translate="yes" xml:space="preserve">
+          <source>\ More Details?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Method CheckIfApiKeyIsValid - NamedType MoreDetailsLbl</note>
+        </trans-unit>
         <trans-unit id="Page 1245818576 - Control 1526265757 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Just For Develope Purposes</source>
-          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Developer" annotates="general" priority="2">Translate this ToolTip.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Control TestLocation - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 4248694681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">

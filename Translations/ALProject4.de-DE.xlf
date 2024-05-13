@@ -1,95 +1,150 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="de-DE" original="ALProject4">
+  <file datatype="xml" source-language="en-US" target-language="de-DE" original="ALProject4.g.xlf">
     <body>
       <group id="body">
         <trans-unit id="Table 3881978066 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Addressdata</source>
+          <target>Adressdaten</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table AddressData - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3881978066 - Field 3168444338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Address</source>
+          <target>Adresse</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table AddressData - Field Address - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3881978066 - Field 714791889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>City</source>
+          <target>Ort</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table AddressData - Field City - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3881978066 - Field 1856816140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Country</source>
+          <target>Land</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table AddressData - Field Country - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3881978066 - Field 3374398455 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Post Code</source>
+          <target>PLZ</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table AddressData - Field PostCode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3438137500 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Address Predictions</source>
+          <target>Adressvorschläge</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table AddressPredictions - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3438137500 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
+          <target>Beschreibung</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table AddressPredictions - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3438137500 - Field 2932692619 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Place ID</source>
+          <target>Google Place ID</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table AddressPredictions - Field Place_ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3438137500 - Field 2862170579 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Temp Location</source>
+          <target>PLZ erfassen</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table AddressPredictions - Field TempLocation - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3098797072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Place Setup</source>
+          <target>Place Api Setup</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table PlaceAPISetup - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3098797072 - Field 1796520249 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Api Key</source>
+          <target>API Schlüssel</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table PlaceAPISetup - Field APiKey - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3098797072 - Field 1859002777 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Language Code</source>
+          <target>Sprachcode</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table PlaceAPISetup - Field LanguageCode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3098797072 - Field 1526265757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Location Test</source>
+          <target>[NAB: NOT TRANSLATED]</target>
           <note from="Developer" annotates="general" priority="2"></note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table PlaceAPISetup - Field TestLocation - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3600324581 - NamedType 70965012" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Your API-Key is not valid. Please enter a valid API-Key in the Place Api Setup.</source>
+          <target>Der eingegebene API Schlüssel ist ungültig. Bitte tragen Sie einen gültigen Schlüssel im API Setup ein.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Place - NamedType EmptyApiKeyErrorLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3600324581 - Method 4089833172 - NamedType 515597094" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The entered address does not include a house number. Please enter a house number.</source>
+          <target>Die eingegebene Adresse enthält keine Hausnummer. Bitte geben Sie eine Hausnummer an.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Place - Method GetAddressData - NamedType EmptyHouseNoErrorLbl</note>
         </trans-unit>
         <trans-unit id="Page 2960578149 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Prediction</source>
+          <target>Vorschlag</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page AddressPrediction - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2960578149 - Action 176483444 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>If the address you are looking for is not listed, it cannot be clearly identified. Please enter the post code of the destination</source>
-          <note from="Developer" annotates="general" priority="2"></note>
+          <target>Wenn die gesuchte Adresse hier nicht gelistet wird, kann sie nicht eindeutig identifiziert werden. Bitte geben sie die passende PLZ an.</target>
+          <note from="Developer" annotates="general" priority="2">Translate this tooltip</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page AddressPrediction - Action AddressNotListed - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1245818576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Place Api Setup</source>
+          <target>Place Api Setup</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1245818576 - Method 1911403107 - NamedType 3387166661" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Change API Key?</source>
+          <target>Möchten Sie den API Schlüssel wirklich ändern?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Method ChangeAPIKey - NamedType ChangeKeyLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1245818576 - Method 1911403107 - NamedType 569618065" size-unit="char" translate="yes" xml:space="preserve">
+          <source>API Key sucessfull changed</source>
+          <target>Der Api Schlüssel wurde erfolgreich geändert.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Method ChangeAPIKey - NamedType ApiKeyChangedLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1245818576 - Method 394955867 - NamedType 2451300220" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Api Key is empty.</source>
+          <target>Der Api Schlüssel ist leer.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Method CheckIfApiKeyIsEmpty - NamedType ApiKeyEmptyErrorLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1245818576 - Method 3744446174 - NamedType 3382200671" size-unit="char" translate="yes" xml:space="preserve">
+          <source>\ More Details?</source>
+          <target>Weitere Details?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Method CheckIfApiKeyIsValid - NamedType MoreDetailsLbl</note>
+        </trans-unit>
         <trans-unit id="Page 1245818576 - Control 1526265757 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Just For Develope Purposes</source>
-          <note from="Developer" annotates="general" priority="2"></note>
+          <target>Nur für Entwicklungszewecke</target>
+          <note from="Developer" annotates="general" priority="2">Translate this ToolTip.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Control TestLocation - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 4248694681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>SetPostCode</source>
+          <target>PLZ erfassen</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SetPostCode - Property Caption</note>
         </trans-unit>

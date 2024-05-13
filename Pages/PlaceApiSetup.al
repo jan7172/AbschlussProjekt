@@ -49,7 +49,7 @@ page 50100 "PlaceApiSetup"
                 field(TestLocation; Rec.TestLocation)
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Just For Develope Purposes';
+                    ToolTip = 'Just For Develope Purposes', Locked = false, Comment = 'Translate this ToolTip.';
                     trigger OnValidate()
                     var
                         place: Codeunit Place;
@@ -69,11 +69,13 @@ page 50100 "PlaceApiSetup"
     /// Checks whether the entered API key is empty
     /// </summary>
     local procedure CheckIfApiKeyIsEmpty()
+    var
+        ApiKeyEmptyErrorLbl: Label 'Api Key is empty.';
     begin
         if Rec.FindLast() then;
         TempKey := Rec.APiKey;
         if Rec.APiKey = '' then begin
-            Message('API Key is empty');
+            Message(Format(ApiKeyEmptyErrorLbl));
         end;
     end;
 
@@ -82,9 +84,12 @@ page 50100 "PlaceApiSetup"
     /// Changes the API key
     /// </summary>
     local procedure ChangeAPIKey()
+    var
+        ChangeKeyLbl: Label 'Change API Key?';
+        ApiKeyChangedLbl: Label 'API Key sucessfull changed';
     begin
-        if Dialog.Confirm('Change API Key?') then begin //<--UserInput is yes
-            Message('API Key sucessfull changed');
+        if Dialog.Confirm(Format(ChangeKeyLbl)) then begin //<--UserInput is yes
+            Message(Format(ApiKeyChangedLbl));
         end else begin //<--UsetInput is no
             Rec.Delete();
             Rec.APiKey := TempKey;
@@ -103,12 +108,13 @@ page 50100 "PlaceApiSetup"
         JsonContent: JsonObject;
         JsonContentAsToken: JsonToken;
         ErrorMessageAsString: Text;
+        MoreDetailsLbl: Label '\ More Details?';
     begin
         if HttpClient.Get('https://maps.googleapis.com/maps/api/place/autocomplete/json?key=' + Rec.APiKey + '&input=New York', ResponseMessage) then begin
             ResponseMessage.Content.ReadAs(ResponseMessageAsString);
             JsonContent.ReadFrom(ResponseMessageAsString);
             if JsonContent.Get('error_message', JsonContentAsToken) then begin
-                ErrorMessageAsString := Format(JsonContentAsToken).Replace('"', '') + '\ More Details?';
+                ErrorMessageAsString := Format(JsonContentAsToken).Replace('"', '') + MoreDetailsLbl;
                 if Dialog.Confirm(ErrorMessageAsString) then begin
                     Message(Format(ResponseMessageAsString));
                 end else begin

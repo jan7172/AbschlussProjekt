@@ -36,10 +36,10 @@ codeunit 50100 Place
                 end;
                 if AddressPrediction.FindFirst() then;
             end else begin
-                Message('Your API-Key is not valid. Please enter a valid API-Key in the Place Api Setup.');
+                Message(Format(EmptyApiKeyErrorLbl));
             end;
         end else begin
-            Message('Your API-Key is not valid. Please enter a valid API-Key in the Place Api Setup.');
+            Message(Format(EmptyApiKeyErrorLbl));
         end;
     end;
 
@@ -60,6 +60,7 @@ codeunit 50100 Place
         CountryAsToken: JsonToken;
         PostCodeAsToken: JsonToken;
         Addressdata: Record AddressData;
+        EmptyHouseNoErrorLbl: Label 'The entered address does not include a house number. Please enter a house number.';
     begin
         if PlaceSetup.FindLast() then;
         Addressdata.DeleteAll();
@@ -99,7 +100,7 @@ codeunit 50100 Place
         Addressdata.PostCode := Format(PostCodeAsToken).Replace('"', '');
         StreetNumberAsValue := StreetNumberAsToken.AsValue();
         if StreetNumberAsValue.IsNull then
-            Error('The entered address does not include a house number. Please enter a house number.');
+            Error(EmptyHouseNoErrorLbl);
         Addressdata.Insert();
     end;
 
@@ -113,10 +114,10 @@ codeunit 50100 Place
             if PlaceSetup.APiKey <> '' then begin
                 GetPredictions(Address);
             end else begin
-                Message('Your API-Key is not valid. Please enter a valid API-Key in the Place Api Setup.');
+                Message(Format(EmptyApiKeyErrorLbl));
             end
         end else begin
-            Message('Your API-Key is not valid. Please enter a valid API-Key in the Place Api Setup.');
+            Message(Format(EmptyApiKeyErrorLbl));
         end;
     end;
 
@@ -129,4 +130,5 @@ codeunit 50100 Place
         JsonContentAsToken: JsonToken;
         AddressPrediction: Record AddressPredictions;
         TempAddress: Text[255];
+        EmptyApiKeyErrorLbl: Label 'Your API-Key is not valid. Please enter a valid API-Key in the Place Api Setup.';
 }
