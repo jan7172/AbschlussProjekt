@@ -118,6 +118,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Method CheckIfApiKeyIsValid - NamedType MoreDetailsLbl</note>
         </trans-unit>
+        <trans-unit id="Page 1245818576 - Control 3690503181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test/Dev Settings</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Control Test/Dev Settings - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1245818576 - Control 1526265757 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Just For Develope Purposes</source>
           <note from="Developer" annotates="general" priority="2">Translate this ToolTip.</note>

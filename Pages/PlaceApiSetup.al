@@ -30,6 +30,7 @@ page 50100 "PlaceApiSetup"
                 }
                 field("Test/Dev Settings"; EnableDevSettings)
                 {
+                    Caption = 'Test/Dev Settings';
                     ApplicationArea = All;
                     trigger OnValidate()
                     begin

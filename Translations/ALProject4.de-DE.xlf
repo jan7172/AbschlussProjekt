@@ -77,9 +77,8 @@
         </trans-unit>
         <trans-unit id="Table 3098797072 - Field 1526265757 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Location Test</source>
-          <target>[NAB: NOT TRANSLATED]</target>
+          <target>Test Ort</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table PlaceAPISetup - Field TestLocation - Property Caption</note>
         </trans-unit>
         <trans-unit id="Codeunit 3600324581 - NamedType 70965012" size-unit="char" translate="yes" xml:space="preserve">
@@ -141,6 +140,12 @@
           <target>Weitere Details?</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Method CheckIfApiKeyIsValid - NamedType MoreDetailsLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 1245818576 - Control 3690503181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test/Dev Settings</source>
+          <target>Entwickleroptionen</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page PlaceApiSetup - Control Test/Dev Settings - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1245818576 - Control 1526265757 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Just For Develope Purposes</source>
