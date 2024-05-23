@@ -1,3 +1,6 @@
+/// <summary>
+/// Page AddressPrediction (ID 50101).
+/// </summary>
 page 50101 "AddressPrediction"
 {
     Caption = 'Prediction';
